@@ -1,9 +1,18 @@
 import React from 'react'
-import "../style.css"
 import Logo from './logo.png';
+import "../style.css"
 
-function Header() {
-    return( 
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector(".navbar");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav.classList.toggle("active");
+
+})
+
+function Header(){
+    return(
         <>
         <header>
             <div className="logo"><img src={Logo} alt="" /></div>
