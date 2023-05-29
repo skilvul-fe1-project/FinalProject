@@ -7,10 +7,17 @@ function App() {
 
   return (
     <>
+<<<<<<< HEAD
       <Header />
       <Artikel />
     </>
   );
+=======
+      <Header/>
+      <Footer/>
+    </> 
+  )
+>>>>>>> dev
 }
 
 export default App;

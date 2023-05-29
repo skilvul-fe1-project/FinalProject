@@ -40,8 +40,8 @@ nav ul li a {
 
 .pin {
   padding: 10px 15px;
-  border-radius: 50px;
-  border: 1px solid white;
+  transition: all 0.3s;
+  border-bottom: 2px solid white;
 }
 
 .bar {
