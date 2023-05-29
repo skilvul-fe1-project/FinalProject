@@ -17,10 +17,10 @@ function Header() {
         </div>
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
             <ul>
-                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA" className="pin">Home</a></li>
-                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Artikel</a></li>
-                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Donasi</a></li>
-                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Kontak</a></li>
+                <li><a href="" className="pin">Home</a></li>
+                <li><a href="">Artikel</a></li>
+                <li><a href="">Donasi</a></li>
+                <li><a href="">Kontak</a></li>
             </ul>
         </nav>
         <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
