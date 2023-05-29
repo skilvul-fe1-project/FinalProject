@@ -36,8 +36,6 @@ function Home(){
             <img src={Hero} alt="" data-aos="fade-left"  data-aos-duration="2500" data-aos-easing="ease-in-out" className="hero-img" />
 
             <ModalVideo channel="youtube" isOpen={isOpen} videoId="zVxzft7T_tA" onClose={() => setIsOpen(false)}/>
-            
-
         </section>
         </>
     )
