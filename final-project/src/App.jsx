@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Home from './pages/home/index'
+import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Artikel from "./pages/Artikel/ArtikelPage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    
     <>
-      <Header/>
-      <Home/>
-      <Footer/>
-    </> 
-  )
+      <Header />
+      <Artikel />
+    </>
+  );
 }
 
-export default App
+export default App;
