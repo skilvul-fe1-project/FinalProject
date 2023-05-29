@@ -14,7 +14,7 @@ header {
 
     padding: 33px 5%;
     align-items: center;
-    background-color: rgb(74, 75, 75);
+    background-color: none;
     display: flex;
     justify-content: space-between;
     height: 120px;
@@ -70,6 +70,25 @@ nav ul li a {
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
+footer{
+    display: flex;
+    height: 8rem;
+    background-color: black;
+}
+footer img{
+    height: 50px;
+}
+.nav-footer{
+display: flex;
+}
+
+.nav-footer a{
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
 
 @media (max-width:820px) {
     .hamburger {
