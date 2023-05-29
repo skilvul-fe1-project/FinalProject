@@ -1,36 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Logo from './logo.png';
-import "../style.css"
+import '../style.css';
 
-const hamburger = document.querySelector(".hamburger");
-const nav = document.querySelector(".navbar");
+function Header() {
+    const [isActive, setIsActive] = useState(false);
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
+    const toggleMenu = () => {
+    setIsActive(!isActive);
+    };
 
-})
-
-function Header(){
-    return(
-        <>
-        <header>
-            <div className="logo"><img src={Logo} alt="" /></div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA" className='pin'>Home</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Artikel</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Donasi</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Kontak</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </header>
-        </>
-    )
+    return (
+    <>
+    <header>
+        <div className="logo">
+            <img src={Logo} alt="Logo" />
+        </div>
+        <nav className={`navbar ${isActive ? 'active' : ''}`}>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA" className="pin">Home</a></li>
+                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Artikel</a></li>
+                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Donasi</a></li>
+                <li><a href="https://www.youtube.com/watch?v=f2xGxd9xPYA">Kontak</a></li>
+            </ul>
+        </nav>
+        <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+        </div>
+    </header>
+    </>
+    );
 }
-export default Header
+
+export default Header;
