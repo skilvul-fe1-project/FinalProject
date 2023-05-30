@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import Artikel from "./pages/Artikel/ArtikelPage";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./pages/home/index";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <Artikel />
+      <Home />
       <Footer />
     </>
   );

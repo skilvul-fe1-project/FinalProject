@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-body {
-  /* background-color: rgb(61, 61, 151); */
-  background-color: rgb(105, 105, 105);
-}
-
 header {
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  position: fixed;
   padding: 33px 5%;
   align-items: center;
   background-color: none;

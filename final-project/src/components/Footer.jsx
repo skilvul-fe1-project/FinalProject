@@ -21,7 +21,7 @@ function Footer(){
                 </div>
             </div>
             <div className="container-bottom">
-            <p>copyrights © 2023 FigoFerdyian. All rights reserved</p>
+            <p>copyrights © 2023 FigoFerdyian. All rights reservedd</p>
             </div>
 
         </footer>
