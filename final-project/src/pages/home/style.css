@@ -12,6 +12,7 @@
 }
 
 
+
 .hero-fr {
     align-items: center;
     display: flex;
@@ -140,6 +141,14 @@
     background-color: rgb(20, 19, 19);
 }
 
+.border-white {
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
 .list-card {
     display: flex;
     flex-wrap: wrap;
@@ -148,14 +157,15 @@
     align-items: center;
     justify-content: center;
     padding: 0 40px;
-   
+    
+
 
 }
 
 /* Benefit section */
 
 .container-card {
-   
+
     width: 277px;
     height: 340px;
     perspective: 800px;
@@ -164,28 +174,28 @@
 .container-card:hover>.card {
     cursor: pointer;
     transform: rotateY(180deg);
-    
+
 }
 
 .card {
-    
+
     height: 100%;
     width: 100%;
     position: relative;
-    transition: transform 0.4s;
+    transition: transform 0.5s;
     transform-style: preserve-3d;
 }
 
 .front,
 .back {
-    
+
     background-color: #F6F6F6;
     padding: 30px;
     height: 100%;
     width: 100%;
     border: 1px solid #22B18B;
     border-radius: 2rem;
-    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     position: absolute;
     backface-visibility: hidden;
 }
@@ -208,31 +218,64 @@
     justify-content: center;
     align-items: center;
     gap: 5rem;
-    
-    
-    
+
+
+
 }
 
 /* about container */
 
-.about-container{
+.about-container {
     display: flex;
+    color: white;
     padding: 0 50px;
     justify-content: space-evenly;
     align-items: center;
-
+    padding: 100px 50px;
+    padding-bottom: 200px;
+    padding-top:300px;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: url(../../assets/bg.png);
+    background-size: cover;
+    background-position: center;
 }
 
-.about-description{
+.about-description {
     width: 500px;
+    font-weight: 500;
 }
 
-.about-sub{
+
+
+.about-sub {
     display: flex;
     align-items: center;
-    
-    width: 200px;
+    width: 300px;
 }
+
+.about-sub h1{
+    font-size: 30pt;
+}
+
+.about-container img{
+    animation: floatAnimation 5s infinite ease-in-out;
+}
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
 
 
 
@@ -328,6 +371,7 @@
         max-width: 100%;
 
     }
+  
 
 }
 
@@ -344,5 +388,22 @@
 
     .hero-link a {
         font-size: 8pt;
+    }
+    .about-container img{
+        height: 300px;
+    }
+    .about-description{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .border-white{
+        display: none;
+    }
+    .about-sub {
+        justify-content: center;
+        
     }
 }
