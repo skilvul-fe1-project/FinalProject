@@ -1,6 +1,6 @@
 import "./ArtikelPage.css";
 
-function Artikel() {
+function ArtikelPage() {
   return (
     <>
       <div className="hero">
@@ -22,4 +22,4 @@ function Artikel() {
   );
 }
 
-export default Artikel;
+export default ArtikelPage;
