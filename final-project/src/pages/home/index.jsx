@@ -154,7 +154,7 @@ function Home() {
                             <div className="artikel-description">
                                 <p data-aos="fade-left" data-aos-delay="900">12 Maret 2023</p>
                                 <h1 data-aos="fade-up"data-aos-delay="1000">Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
-                                <a href="" data-aos="fade-right">Read More</a>
+                                <a href="" >Read More</a>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ function Home() {
 
             </section>
             <section className="support-container" data-aos="fade-up" data-aos-delay="300">
-                <h1>Powered by</h1>
+                <h1>POWERED BY</h1>
                 <div className="img-container">
                     <img src={logo1} alt="" data-aos="fade-up" data-aos-delay="300"/>
                     <img src={logo5} alt="" data-aos="fade-up" data-aos-delay="400"/>
