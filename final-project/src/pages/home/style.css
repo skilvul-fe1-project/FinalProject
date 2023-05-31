@@ -275,9 +275,40 @@
     }
 }
 
+.artikel-container{
+    background-color: #478552;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 350px 50px;
+    align-items: center;
+    height: 40vh;
+    color: white;
+}
 
+.artikel-description{
+    font-weight: 500;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+}
 
+.artikel-description a{
+    text-decoration: none;
+    color: white;
+    background-color: #ECAC2F;
+    padding: 15px 40px;
+    transition: all 0.3s;
+    border-radius: 50px;
+}
 
+.artikel-description a:hover{
+    background-color: #e2b458;
+    transform: translateY(-5px);
+}
 
 
 

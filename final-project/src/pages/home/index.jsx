@@ -11,102 +11,114 @@ import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import aboutIMG from "../../assets/trash.png"
+import artikelIMG from "../../assets/artikel/artikel-1.png"
 
 
 AOS.init();
 
 
-function Home(){
+function Home() {
+   
+
+
+
+
     const [isOpen, setIsOpen] = useState(false);
-    return(
+    return (
         <>
 
             <section className="hero" >
                 <div className="hero-fr" data-aos="fade-right" data-aos-duration="2500">
                     <div className="hero-media" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="50">
-                    <a href="https://www.instagram.com/ui.figo/" target="_blank"> <AiFillInstagram className="hero-icon"/></a>
-                        <a href="" target="_blank"><AiFillYoutube className="hero-icon"/></a>
+                        <a href="https://www.instagram.com/ui.figo/" target="_blank"> <AiFillInstagram className="hero-icon" /></a>
+                        <a href="" target="_blank"><AiFillYoutube className="hero-icon" /></a>
                         <a href="" target="_blank">  <AiFillTwitterCircle className="hero-icon" /></a>
-                        
+
                     </div>
                     <div className="hero-text">
                         <h1>Save Environment  save our Planet Earth.</h1>
                         <p>The natural environment is important to human health, it was foremost. Nature is very importance</p>
                         <div className="hero-link" >
-                        <a href=""className="action">Take Action</a>
-                        <a href="#" className="watch" onClick={() => setIsOpen(true)}>
-                <BsPlayFill className="hero-icon" /> Watch</a>
+                            <a href="" className="action">Take Action</a>
+                            <a href="#" className="watch" onClick={() => setIsOpen(true)}>
+                                <BsPlayFill className="hero-icon" /> Watch</a>
                         </div>
                     </div>
                 </div>
-                <img src={Hero} alt="" data-aos="fade-left"  data-aos-duration="2500" data-aos-easing="ease-in-out" className="hero-img" />
+                <img src={Hero} alt="" data-aos="fade-left" data-aos-duration="2500" data-aos-easing="ease-in-out" className="hero-img" />
 
-                <ModalVideo channel="youtube" isOpen={isOpen} videoId="zVxzft7T_tA" onClose={() => setIsOpen(false)}/>
+                <ModalVideo channel="youtube" isOpen={isOpen} videoId="zVxzft7T_tA" onClose={() => setIsOpen(false)} />
             </section>
-       
 
-        <section className="benefit-container">
-            <div className="sub-judul-card" data-aos="fade-down" data-aos-delay="300">
-                <span className="border"></span>
-                <h1>Why people choose go recycle ?</h1>
-                <span className="border"></span>
-            </div>
-            <div className="list-card" data-aos="fade-up" data-aos-delay="400" >
-                <div class="container-card">
-                    <div class="card">
-                        <div class="front" data-aos-delay="500"  data-aos="fade-up">
-                            <img src={icon1} alt="" />
-                            <h1  >Great Information</h1>
+
+            <section className="benefit-container">
+                <div className="sub-judul-card" data-aos="fade-down" data-aos-delay="300">
+                    <span className="border"></span>
+                    <h1>Why people choose go recycle ?</h1>
+                    <span className="border"></span>
+                </div>
+                <div className="list-card" data-aos="fade-up" data-aos-delay="400" >
+                    <div class="container-card">
+                        <div class="card">
+                            <div class="front" data-aos-delay="500" data-aos="fade-up">
+                                <img src={icon1} alt="" />
+                                <h1  >Great Information</h1>
+                            </div>
+                            <div class="back">
+                                <p> Website “GoRecyle” ini merupakan website yang berupaya untuk memberikan informasi edukasi dan berita kepada masyarakat yang berkaitan dengan lingkungan.</p>
+                            </div>
                         </div>
-                        <div class="back">
-                            <p> Website “GoRecyle” ini merupakan website yang berupaya untuk memberikan informasi edukasi dan berita kepada masyarakat yang berkaitan dengan lingkungan.</p>
+                    </div>
+                    <div class="container-card">
+                        <div class="card">
+                            <div class="front" data-aos-delay="600" data-aos="fade-up">
+                                <img src={icon2} alt="" />
+                                <h1>Donation</h1>
+                            </div>
+                            <div class="back">
+                                <p> Donasi bertujuan untuk mendukung kegiatan lingkungan yang berkaitan dengan daur ulang sampah Donasi yang terkumpul akan digunakan untuk mendukung organisasi yang bekerja dalam bidang daur ulang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-card">
+                        <div class="card">
+                            <div class="front" data-aos-delay="700" data-aos="fade-up">
+                                <img src={icon3} alt="" />
+                                <h1>Sustainability</h1>
+                            </div>
+                            <div class="back">
+                                <p> GoRecyle membantu Meningkatkan kesadaran user akan pentingnya menjaga dan menghargai lingkungan hidup</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-card">
-                    <div class="card">
-                        <div class="front" data-aos-delay="600"  data-aos="fade-up">
-                            <img src={icon2} alt="" />
-                            <h1>Donation</h1>
-                        </div>
-                        <div class="back">
-                            <p> Donasi bertujuan untuk mendukung kegiatan lingkungan yang berkaitan dengan daur ulang sampah Donasi yang terkumpul akan digunakan untuk mendukung organisasi yang bekerja dalam bidang daur ulang.</p>
-                        </div>
+            </section>
+            <section className="about-container" data-aos="fade-right" data-aos-delay="600">
+                <img src={aboutIMG} alt="" data-aos="fade-right" />
+                <div className="about-description">
+                    <div className="about-sub" data-aos="fade-left" data-aos-delay="1000">
+                        <h1>Our Story</h1>
+                        <span className="border-white" ></span>
                     </div>
+                    <br />
+                    <p data-aos="fade-left" data-aos-delay="1200">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
+                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
+                        fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
+                        yang tidak terkelola dengan baik.
+                        Selain itu, Gorecycle juga memiliki fitur donasi yang bertujuan untuk mendukung kegiatan lingkungan yang
+                        berkaitan dengan daur ulang sampah.<br /><br />  Donasi yang terkumpul melalui website ini akan digunakan untuk
+                        mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
                 </div>
-                <div class="container-card">
-                    <div class="card">
-                        <div class="front" data-aos-delay="700"  data-aos="fade-up">
-                            <img src={icon3} alt="" />
-                            <h1>Sustainability</h1>
+            </section>
+            <section className="artikel-container">
+                        <img src={artikelIMG} alt="haha" />
+                        <div className="artikel-description">
+                            <p>12 Maret 2023</p>
+                            <h1>Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
+                            <a href="">Read More</a>
                         </div>
-                        <div class="back">
-                            <p> GoRecyle membantu Meningkatkan kesadaran user akan pentingnya menjaga dan menghargai lingkungan hidup</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section className="about-container" data-aos="fade-right" data-aos-delay="600">
-            <img src={aboutIMG} alt="" data-aos="fade-right" />
-            <div className="about-description">
-                <div className="about-sub" data-aos="fade-left" data-aos-delay="1000">
-                    <h1>Our Story</h1>
-                    <span className="border-white" ></span>
-                </div>
-                <br/>
-                <p data-aos="fade-left" data-aos-delay="1200">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
-                sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br/><br/> Gorecycle juga memiliki
-                fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
-                yang tidak terkelola dengan baik.
-                Selain itu, Gorecycle juga memiliki fitur donasi yang bertujuan untuk mendukung kegiatan lingkungan yang
-                berkaitan dengan daur ulang sampah.<br/><br/>  Donasi yang terkumpul melalui website ini akan digunakan untuk
-                mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
-            </div>
-        </section>
-        <section className="artikel-container">
-            
-        </section>
+                    </section>
+           
         </>
     )
 }
