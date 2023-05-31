@@ -21,34 +21,36 @@ function Header() {
         };
     }, []);
 
-    const toggleMenu = () => {
+    const open = () => {
         openHamburger(!hamburger);
     };
 
-    const closeMenu = () => {
+    const close = () => {
         openHamburger(false);
     };
 
     return (
-        <header className={sticky ? 'sticky' : ''}>
-            <div className="logo">
-                <img src={Logo} alt="Logo" />
-            </div>
-            <nav className={`navbar ${hamburger ? 'active' : ''}`}>
-                <ul>
-                    <li><a href="/" className="pin" onClick={closeMenu}>Home</a></li>
-                    <li><a href="/" className="pin" onClick={closeMenu}>Artikel</a></li>
-                    <li><a href="/" className="pin" onClick={closeMenu}>Donasi</a></li>
-                    <li><a href="/" className="pin" onClick={closeMenu}>Kontak</a></li>
-                </ul>
-            </nav>
-            <div className={`hamburger ${hamburger ? 'active' : ''}`} onClick={toggleMenu}>
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
-        </header>
-    );
+        <>
+            <header className={sticky ? 'sticky' : ''}>
+                <div className="logo">
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <nav className={`navbar ${hamburger ? 'active' : ''}`}>
+                    <ul>
+                        <li><a href="/" className="pin" onClick={close}>Home</a></li>
+                        <li><a href="/" className="pin" onClick={close}>Artikel</a></li>
+                        <li><a href="/" className="pin" onClick={close}>Donasi</a></li>
+                        <li><a href="/" className="pin" onClick={close}>Kontak</a></li>
+                    </ul>
+                </nav>
+                <div className={`hamburger ${hamburger ? 'active' : ''}`} onClick={open}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
+            </header>
+        </>
+    )
 }
 
 export default Header;

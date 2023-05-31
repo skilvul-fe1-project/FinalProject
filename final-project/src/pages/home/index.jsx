@@ -12,13 +12,48 @@ import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import aboutIMG from "../../assets/trash.png"
 import artikelIMG from "../../assets/artikel/artikel-1.png"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+import logo1 from "../../assets/logo/logo1.png";
+import logo2 from "../../assets/logo/logo2.png"
+import logo3 from "../../assets/logo/logo3.png"
+import logo4 from "../../assets/logo/logo4.png"
+import logo5 from "../../assets/logo/logo5.png"
+import logo6 from "../../assets/logo/logo6.png"
 
 
 AOS.init();
 
 
 function Home() {
-   
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 768, // Adjust this breakpoint according to your needs
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 576, // Adjust this breakpoint according to your needs
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
 
 
@@ -110,15 +145,47 @@ function Home() {
                         mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
                 </div>
             </section>
-            <section className="artikel-container">
-                        <img src={artikelIMG} alt="haha" />
-                        <div className="artikel-description">
-                            <p>12 Maret 2023</p>
-                            <h1>Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
-                            <a href="">Read More</a>
+            <section className="artikel-container" >
+
+                <Slider {...settings}>
+                    <div className="container-slide" data-aos="fade-right" data-aos-delay="800">
+                        <div className="artikel-slide">
+                            <img src={artikelIMG} alt="haha" />
+                            <div className="artikel-description">
+                                <p data-aos="fade-left" data-aos-delay="900">12 Maret 2023</p>
+                                <h1 data-aos="fade-up"data-aos-delay="1000">Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
+                                <a href="" data-aos="fade-right">Read More</a>
+                            </div>
                         </div>
-                    </section>
-           
+                    </div>
+                    <div className="container-slide" >
+                        <div className="artikel-slide">
+                            <img src={artikelIMG} alt="haha" />
+                            <div className="artikel-description">
+                                <p>12 Maret 2023</p>
+                                <h1>Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
+                                <a href="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                </Slider>
+
+            </section>
+            <section className="support-container" data-aos="fade-up" data-aos-delay="300">
+                <h1>Powered by</h1>
+                <div className="img-container">
+                    <img src={logo1} alt="" data-aos="fade-up" data-aos-delay="300"/>
+                    <img src={logo5} alt="" data-aos="fade-up" data-aos-delay="400"/>
+                    <img src={logo2} alt="" data-aos="fade-up" data-aos-delay="500"/>
+                    <img src={logo6} alt="" data-aos="fade-up" data-aos-delay="600"/>
+                    <img src={logo3} alt="" data-aos="fade-up" data-aos-delay="700"/>
+                    <img src={logo4} alt="" data-aos="fade-up" data-aos-delay="800"/>
+                    
+                    
+                </div>
+            </section>
+
         </>
     )
 }
