@@ -186,7 +186,9 @@
     transition: transform 0.5s;
     transform-style: preserve-3d;
 }
-
+.card img{
+    height: 200px;
+}
 .front,
 .back {
 
@@ -262,7 +264,15 @@
 .about-container img {
     animation: floatAnimation 5s infinite ease-in-out;
 }
-
+.animated-1{
+    animation: floatAnimation 3s infinite ease-in-out;
+}
+.animated-2{
+    animation: floatAnimation 5s infinite ease-in-out;
+}
+.animated-3{
+    animation: floatAnimation 4.2s infinite ease-in-out;
+}
 @keyframes floatAnimation {
     0% {
         transform: translateY(0);

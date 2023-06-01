@@ -106,7 +106,7 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="500" data-aos="fade-up">
-                                <img src={icon1} alt="" />
+                                <img src={icon1} alt="" className="animated-1"/>
                                 <h1  >Great Information</h1>
                             </div>
                             <div className="back">
@@ -117,7 +117,7 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="600" data-aos="fade-up">
-                                <img src={icon2} alt="" />
+                                <img src={icon2} alt="" className="animated-2" />
                                 <h1>Donation</h1>
                             </div>
                             <div className="back">
@@ -128,8 +128,8 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="700" data-aos="fade-up">
-                                <img src={icon3} alt="" />
-                                <h1>Sustainability</h1>
+                                <img src={icon3} alt="" className="animated-3"/>
+                                <h1>Caring</h1>
                             </div>
                             <div className="back">
                                 <p> GoRecyle membantu Meningkatkan kesadaran user akan pentingnya menjaga dan menghargai lingkungan hidup</p>
@@ -138,15 +138,15 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="about-container" data-aos="fade-right" data-aos-delay="600">
+            <section className="about-container" >
                 <img src={aboutIMG} alt="" data-aos="fade-right" />
                 <div className="about-description">
-                    <div className="about-sub" data-aos="fade-left" data-aos-delay="1000">
+                    <div className="about-sub" data-aos="fade-left" data-aos-delay="700">
                         <h1>Our Story</h1>
                         <span className="border-white" ></span>
                     </div>
                     <br />
-                    <p data-aos="fade-left" data-aos-delay="1200">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
+                    <p data-aos="fade-left" data-aos-delay="1000">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
                         sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
                         fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
                         yang tidak terkelola dengan baik.
