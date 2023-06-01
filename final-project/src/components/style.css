@@ -66,7 +66,15 @@ nav ul li a {
     display: block;
     width: 0px;
     height: 2px;
-    background-color: rgb(11, 11, 11);
+    background-color: rgb(247, 243, 243);
+    transition: width.3s;
+}
+.sticky .pin::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background-color: rgb(2, 2, 2);
     transition: width.3s;
 }
 
