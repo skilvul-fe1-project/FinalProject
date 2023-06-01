@@ -355,6 +355,11 @@
     
 }
 
+.artikel-slide img{
+    height:  372px;
+    width: 595px;
+
+}
 
 
 
@@ -580,5 +585,12 @@
     }
     .artikel-description a{
         padding: 10px 20px;
+    }
+}
+
+@media (max-width:399px){
+    .artikel-slide img{
+        width: auto;
+        border-radius: 20px;
     }
 }

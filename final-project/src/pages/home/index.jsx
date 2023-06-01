@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BsPlayFill } from "react-icons/bs";
@@ -23,6 +23,7 @@ import logo4 from "../../assets/logo/logo4.png"
 import logo5 from "../../assets/logo/logo5.png"
 import logo6 from "../../assets/logo/logo6.png"
 
+import axios from "axios";
 
 AOS.init();
 
@@ -55,10 +56,19 @@ function Home() {
         ]
     };
 
-
-
-
     const [isOpen, setIsOpen] = useState(false);
+    const [artikelData, setArtikelData] = useState([]);
+    useEffect(() => {
+        axios
+            .get("https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel")
+            .then((response) => {
+                setArtikelData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching artikel data:", error);
+            });
+    }, []);
+
     return (
         <>
 
@@ -93,35 +103,35 @@ function Home() {
                     <span className="border"></span>
                 </div>
                 <div className="list-card" data-aos="fade-up" data-aos-delay="400" >
-                    <div class="container-card">
-                        <div class="card">
-                            <div class="front" data-aos-delay="500" data-aos="fade-up">
+                    <div className="container-card">
+                        <div className="card">
+                            <div className="front" data-aos-delay="500" data-aos="fade-up">
                                 <img src={icon1} alt="" />
                                 <h1  >Great Information</h1>
                             </div>
-                            <div class="back">
+                            <div className="back">
                                 <p> Website “GoRecyle” ini merupakan website yang berupaya untuk memberikan informasi edukasi dan berita kepada masyarakat yang berkaitan dengan lingkungan.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="container-card">
-                        <div class="card">
-                            <div class="front" data-aos-delay="600" data-aos="fade-up">
+                    <div className="container-card">
+                        <div className="card">
+                            <div className="front" data-aos-delay="600" data-aos="fade-up">
                                 <img src={icon2} alt="" />
                                 <h1>Donation</h1>
                             </div>
-                            <div class="back">
+                            <div className="back">
                                 <p> Donasi bertujuan untuk mendukung kegiatan lingkungan yang berkaitan dengan daur ulang sampah Donasi yang terkumpul akan digunakan untuk mendukung organisasi yang bekerja dalam bidang daur ulang.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="container-card">
-                        <div class="card">
-                            <div class="front" data-aos-delay="700" data-aos="fade-up">
+                    <div className="container-card">
+                        <div className="card">
+                            <div className="front" data-aos-delay="700" data-aos="fade-up">
                                 <img src={icon3} alt="" />
                                 <h1>Sustainability</h1>
                             </div>
-                            <div class="back">
+                            <div className="back">
                                 <p> GoRecyle membantu Meningkatkan kesadaran user akan pentingnya menjaga dan menghargai lingkungan hidup</p>
                             </div>
                         </div>
@@ -145,44 +155,33 @@ function Home() {
                         mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
                 </div>
             </section>
-            <section className="artikel-container" >
-
+            <section className="artikel-container">
                 <Slider {...settings}>
-                    <div className="container-slide" data-aos="fade-right" data-aos-delay="800">
-                        <div className="artikel-slide">
-                            <img src={artikelIMG} alt="haha" />
-                            <div className="artikel-description">
-                                <p data-aos="fade-left" data-aos-delay="900">12 Maret 2023</p>
-                                <h1 data-aos="fade-up"data-aos-delay="1000">Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
-                                <a href="" >Read More</a>
+                {artikelData.slice(0, 3).map((artikel) => (
+                        <div className="container-slide" key={artikel.id}>
+                            <div className="artikel-slide">
+                                <img src={artikel.img} alt="haha" />
+                                <div className="artikel-description">
+                                    <p>{artikel.date}</p>
+                                    <h1>{artikel.title}</h1>
+                                    <a href="#">Read More</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="container-slide" >
-                        <div className="artikel-slide">
-                            <img src={artikelIMG} alt="haha" />
-                            <div className="artikel-description">
-                                <p>12 Maret 2023</p>
-                                <h1>Inovasi Pengelolaan Sampah untuk Mengatasi Bencana Alam</h1>
-                                <a href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                
+                    ))}
                 </Slider>
-
             </section>
             <section className="support-container" data-aos="fade-up" data-aos-delay="300">
                 <h1>POWERED BY</h1>
                 <div className="img-container">
-                    <img src={logo1} alt="" data-aos="fade-up" data-aos-delay="300"/>
-                    <img src={logo5} alt="" data-aos="fade-up" data-aos-delay="400"/>
-                    <img src={logo2} alt="" data-aos="fade-up" data-aos-delay="500"/>
-                    <img src={logo6} alt="" data-aos="fade-up" data-aos-delay="600"/>
-                    <img src={logo3} alt="" data-aos="fade-up" data-aos-delay="700"/>
-                    <img src={logo4} alt="" data-aos="fade-up" data-aos-delay="800"/>
-                    
-                    
+                    <img src={logo1} alt="" data-aos="fade-up" data-aos-delay="300" />
+                    <img src={logo5} alt="" data-aos="fade-up" data-aos-delay="400" />
+                    <img src={logo2} alt="" data-aos="fade-up" data-aos-delay="500" />
+                    <img src={logo6} alt="" data-aos="fade-up" data-aos-delay="600" />
+                    <img src={logo3} alt="" data-aos="fade-up" data-aos-delay="700" />
+                    <img src={logo4} alt="" data-aos="fade-up" data-aos-delay="800" />
+
+
                 </div>
             </section>
 
