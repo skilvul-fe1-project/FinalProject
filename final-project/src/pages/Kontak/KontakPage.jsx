@@ -16,12 +16,12 @@ function KontakPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && email && comment) {
-      const newComment = {
+      const newData = {
         name: name,
         email: email,
         comment: comment,
       };
-      setdata([...data, newComment]);
+      setdata([...data, newData]);
       setName("");
       setEmail("")
       setComment("");
@@ -53,13 +53,13 @@ function KontakPage() {
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6709.796091383482!2d101.43572269134613!3d0.4964603599683895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1685977079945!5m2!1sid!2sid" ></iframe>
 
         <div className="form-contact">
-          <h1>Hubungi</h1>
+          <h1>Hubungi Kami</h1>
           <form onSubmit={handleSubmit}>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="nama" />
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             <textarea name="" id="" cols="30" rows="10" placeholder="Komentar" value={comment} onChange={(e) => setComment(e.target.value)} > </textarea>
             <div className="button-container">
-              <button>Kirim</button>
+              <button>SEND</button>
             </div>
           </form>
 
@@ -77,7 +77,7 @@ function KontakPage() {
       <section className="coment-container">
         <div className="sub-coment">
           <span></span>
-          <h1>Pendapat masyarakat tentang kami?</h1>
+          <h1>Ulasan Tentang Kami </h1>
           <span></span>
         </div>
 
@@ -99,7 +99,7 @@ function KontakPage() {
               <h1>Figo Ferdyian</h1>
             </div>
             <div className="ulasan">
-              <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora corporis odit sint quasi iusto sapie sapnte fugit error nobis eaque?</p>
+              <p>“ Saya senang menemukan website ini. Mereka memberikan informasi yang sangat lengkap terkait berita seputar lingkungan. Mereka juga memberikan informasi terkait kegiatan campaign yang sedang berjalan.“</p>
             </div>
           </div>
         </div>

@@ -69,6 +69,22 @@ input {
   width: 100%;
   border-radius: 5px;
   padding: 10px;
+  transition: all 0.2s;
+}
+input:first-child {
+  margin-top: 10px;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+  border-color: #22B18B;
+}
+
+textarea:hover,
+textarea:focus{
+  outline: none;
+  border-color: #22B18B;
 }
 
 textarea {
@@ -77,6 +93,7 @@ textarea {
   padding: 10px;
   width: 100%;
   resize: none;
+  transition: all 0.2s;
 
 }
 
@@ -92,7 +109,15 @@ button {
   color: white;
   border: none;
   border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.2s;
 }
+
+button:hover{
+  background-color: #64b875;
+  transform:translateX(10px);
+}
+
 
 .popup {
   position: fixed;
@@ -127,6 +152,9 @@ button {
   cursor: pointer;
   border-radius: 50px;
 }
+.popup button:hover{
+  background-color: #5fa76d;
+}
 
 
 
@@ -139,6 +167,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 250px;
 
   
 }
@@ -209,6 +238,9 @@ button {
 
   .form-contact {
     width: 100%;
+  }
+  .coment-container{
+    margin: 0 20px;
   }
 
 
