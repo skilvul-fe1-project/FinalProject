@@ -91,11 +91,13 @@ button {
 }
 
 .coment-container{
+  
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .sub-coment{
+  padding: 50px 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -109,8 +111,30 @@ button {
   transition: all 0.3s ease-in-out;
   background-color: black;
 }
-
-
+.data-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.data-coment{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  border: 1px solid #22B18B;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+.profile{
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.profile img{
+  height: 70px;
+}
 
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import avatar from "../../assets/pria.png"
 import "./KontakPage.css";
 
 function KontakPage() {
@@ -26,21 +26,36 @@ function KontakPage() {
           </form>
         </div>
       </section>
+
       <section className="coment-container">
         <div className="sub-coment">
           <span></span>
           <h1>Pendapat masyarakat tentang kami?</h1>
           <span></span>
         </div>
-        <div className="coment">
-          <div className="profile">
-            <img src="" alt="" />
-            <h1>Figo Ferdyian</h1>
+
+        <div className="data-container">
+          <div className="data-coment">
+            <div className="profile">
+              <img src={avatar} alt="" />
+              <h1>Figo Ferdyian</h1>
+            </div>
+            <div className="ulasan">
+              <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora corporis odit sint quasi iusto sapienasdasdasdsadsadsadddddddddddddte fugit error nobis eaque?</p>
+            </div>
           </div>
-          <div className="ulasan">
-            <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora corporis odit sint quasi iusto sapiente fugit error nobis eaque?</p>
+
+          <div className="data-coment">
+            <div className="profile">
+              <img src={avatar} alt="" />
+              <h1>Figo Ferdyian</h1>
+            </div>
+            <div className="ulasan">
+              <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora corporis odit sint quasi iusto sapiente fugit error nobis eaque?</p>
+            </div>
           </div>
         </div>
+        
       </section>
     </>
   );
