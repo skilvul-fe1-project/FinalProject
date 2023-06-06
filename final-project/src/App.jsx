@@ -1,16 +1,17 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ArtikelPage from "./pages/Artikel/ArtikelPage";
+import DetailPage from "./pages/Detail/DetailPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Header />
-      <ArtikelPage />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<ArtikelPage />} />
+          <Route path="/detail" element={<DetailPage />} />
+        </Routes>
+      </Router>
     </>
   );
 }
