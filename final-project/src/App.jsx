@@ -10,7 +10,7 @@ function App() {
     
     <>
       <Header/>
-      <DonasiPage/>
+      <KontakPage/>
       <Footer/>
       
     </> 
