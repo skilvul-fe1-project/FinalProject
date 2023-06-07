@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ArtikelPage from "./pages/Artikel/ArtikelPage";
 import DetailPage from "./pages/Detail/DetailPage";
@@ -9,8 +8,6 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
-
-      <KontakPage/>
 
       <Router>
         <Routes>
