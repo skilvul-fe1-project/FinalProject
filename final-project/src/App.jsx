@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import KontakPage from'./pages/Kontak/KontakPage'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
       <Header/>
       <KontakPage/>
+      <Footer/>
       
     </> 
   )
