@@ -1,0 +1,130 @@
+.donasi {
+  text-align: center;
+  justify-content: center;
+  background-image: url("https://i.ibb.co/vDWzz0p/Rectangle-2.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.donasi h1 {
+  margin-bottom: 50px;
+  color: white;
+}
+
+.donasi p {
+  font-size: 18px;
+  color: white;
+}
+
+/*  */
+
+.container-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5vw;
+  gap: 5vw;
+  transition: all 0.3s;
+}
+
+.deskripsi {
+  color: black;
+  text-align: center;
+  padding: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*  */
+.programs-card {
+  width: 300px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgb(67, 64, 64);
+  border: 2px solid #22B18B;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  display: inline-block;
+  /* Menampilkan elemen secara berjajar kesamping */
+  transition: all 0.2s;
+
+}
+
+.programs-card:hover {
+  background-color: #478552;
+  /* transform: scale(1.1); */
+  box-shadow: 2 5 10px gray;
+  color: white;
+}
+
+a .programs-card {
+  color: black;
+}
+
+.card {
+  padding: 20px;
+  text-align: center;
+}
+
+.card img {
+  width: 250px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  justify-content: right;
+  text-align: center;
+  width: 100%;
+
+
+}
+
+.programs-card .card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.programs-card .card a:hover {
+  background-color: #45a049;
+}
+
+/*  */
+
+.main {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+
+.main p {
+  font-size: 18px;
+}
+
+.main a {
+  color: #22B18B;
+  text-decoration: none;
+}
