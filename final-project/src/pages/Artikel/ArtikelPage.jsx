@@ -24,7 +24,7 @@ function ArtikelPage() {
           </p>
           <button className={ArtikelCSS.btn}>
             <Link
-              to="/detail"
+              to="/Artikel/Detail"
             >
               Read More
             </Link>

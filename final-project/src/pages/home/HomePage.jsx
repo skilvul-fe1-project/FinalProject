@@ -27,7 +27,7 @@ import axios from "axios";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-
+import { Link } from "react-router-dom";
 
 AOS.init();
 
@@ -39,7 +39,7 @@ function Home() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
@@ -75,7 +75,7 @@ function Home() {
 
     return (
         <>
-        <Header/>
+            <Header />
             <section className="hero" >
                 <div className="hero-fr" data-aos="fade-right" data-aos-duration="2500">
                     <div className="hero-media" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="50">
@@ -88,7 +88,7 @@ function Home() {
                         <h1>Save Environment  save our Planet Earth.</h1>
                         <p>The natural environment is important to human health, it was foremost. Nature is very importance</p>
                         <div className="hero-link" >
-                            <a href="" className="action">Take Action</a>
+                            <a href="https://saweria.co/gorecycle" target={"_blank"} className="action">Take Action</a>
                             <a href="#" className="watch" onClick={() => setIsOpen(true)}>
                                 <BsPlayFill className="hero-icon" /> Watch</a>
                         </div>
@@ -110,7 +110,7 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="500" data-aos="fade-up">
-                                <img src={icon1} alt="" className="animated-1"/>
+                                <img src={icon1} alt="" className="animated-1" />
                                 <h1  >Great Information</h1>
                             </div>
                             <div className="back">
@@ -132,7 +132,7 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="700" data-aos="fade-up">
-                                <img src={icon3} alt="" className="animated-3"/>
+                                <img src={icon3} alt="" className="animated-3" />
                                 <h1>Caring</h1>
                             </div>
                             <div className="back">
@@ -161,14 +161,16 @@ function Home() {
             </section>
             <section className="artikel-container">
                 <Slider {...settings}>
-                {artikelData.slice(0, 3).map((artikel) => (
+                    {artikelData.slice(0, 3).map((artikel) => (
                         <div className="container-slide" key={artikel.id}>
                             <div className="artikel-slide">
                                 <img src={artikel.img} alt="haha" />
                                 <div className="artikel-description">
                                     <p>{artikel.date}</p>
                                     <h1>{artikel.title}</h1>
-                                    <a href="#">Read More</a>
+                                    <Link to="/Artikel/Detail">
+                                    Read More
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +190,7 @@ function Home() {
 
                 </div>
             </section>
-            <Footer/>
+            <Footer />
         </>
     )
 }

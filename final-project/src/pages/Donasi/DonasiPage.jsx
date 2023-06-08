@@ -25,7 +25,7 @@ function DonasiPage() {
 
             <div className="container-card-list" data-aos="fade-up">
                 <a href="https://saweria.co/gorecycle" target="_blank"><div class="programs-card">
-                    <div class="card">
+                    <div class="card-donate">
                         <img src="https://i.ibb.co/FHNnDgx/Rectangle-130.png"></img>
                         <h2>Ayo Jangan Pakai Plastik!</h2>
                         <p>Penggunaan plastik yang berlebihan dapat menimbulkan dampak buruk bagi lingkungan</p>
@@ -35,7 +35,7 @@ function DonasiPage() {
 
 
                 <a href="https://saweria.co/gorecycle" target="_blank"><div class="programs-card">
-                    <div class="card">
+                    <div class="card-donate">
                         <img src="https://i.ibb.co/xC0C7NC/Rectangle-131.png"></img>
                         <h2>Yuk Bawa Wadah Makanan Sendiri</h2>
                         <p>yuk bantu kami agar dapat mengurangi dampak buruk lingkungan</p>
@@ -45,7 +45,7 @@ function DonasiPage() {
 
 
                 <a href="https://saweria.co/gorecycle" target="_blank"><div class="programs-card">
-                    <div class="card">
+                    <div class="card-donate">
                         <img src="https://i.ibb.co/0jshXWG/Rectangle-131-1.png"></img>
                         <h2>Jadikan Daur Ulang sebagai Kebiasaan Kita</h2>
                         <p>Masyarakat Indonesia harus lebih aktif dalam mendaur ulang sampah</p>
@@ -56,8 +56,8 @@ function DonasiPage() {
 
             <div className="main">
 
-                <p>untuk informasi mengenai  donasi lebih spesifik hubungi kami
-                    <p>di <a href="mailto:gorecycle01@gmail.com">gorecycle01@gmail.com</a></p></p>
+                <p>Untuk informasi mengenai  donasi lebih spesifik hubungi kami
+                    <p>di <a href="mailto:gorecycle01@gmail.com"><b>gorecycleID@gmail.com</b></a></p></p>
             </div>
             <Footer/>
         </>

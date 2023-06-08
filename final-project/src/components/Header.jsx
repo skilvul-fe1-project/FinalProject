@@ -37,10 +37,10 @@ function Header() {
                 </div>
                 <nav className={`navbar ${hamburger ? 'active' : ''}`}>
                     <ul>
-                        <li><Link to="/home" className="pin" onClick={close}>Home</Link></li>
-                        <li><Link to="/artikel" className="pin" onClick={close}>Artikel</Link></li>
-                        <li><Link to="/donasi" className="pin" onClick={close}>Donasi</Link></li>
-                        <li><Link to="/kontak" className="pin" onClick={close}>Kontak</Link></li>
+                        <li><Link to="/Home" className="pin" onClick={close}>Home</Link></li>
+                        <li><Link to="/Artikel" className="pin" onClick={close}>Artikel</Link></li>
+                        <li><Link to="/Donasi" className="pin" onClick={close}>Donasi</Link></li>
+                        <li><Link to="/Kontak" className="pin" onClick={close}>Kontak</Link></li>
                     </ul>
                 </nav>
                 <div className={`hamburger ${hamburger ? 'active' : ''}`} onClick={open}>
