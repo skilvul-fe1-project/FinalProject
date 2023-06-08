@@ -19,8 +19,7 @@ function ArtikelPage() {
             Mengatasi Bencana Alam
           </h1>
           <p>
-            platfrom for delivering simply dummy text of the <br /> dummy text
-            dummy text
+          Inovasi seputar pengelolaan sampah untuk mencegah bencana alam
           </p>
           <button className={ArtikelCSS.btn}>
             <Link

@@ -103,7 +103,7 @@ function Home() {
             <section className="benefit-container">
                 <div className="sub-judul-card" data-aos="fade-down" data-aos-delay="300">
                     <span className="border"></span>
-                    <h1>Why people choose go recycle ?</h1>
+                    <h1>Why People Choose Go Recycle ?</h1>
                     <span className="border"></span>
                 </div>
                 <div className="list-card" data-aos="fade-up" data-aos-delay="400" >

@@ -26,8 +26,6 @@
 
 .btn {
   background-color: #448150;
-  height: 50px;
-  width: 150px;
   border-radius: 50px;
   font-size: 16px;
 }
@@ -44,11 +42,13 @@
 
 .image-overlay {
   position: relative;
+  
 }
 
 .image-overlay img {
   width: 100%;
   height: 100%;
+  
 }
 
 .text-overlay {
@@ -62,6 +62,7 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
+  padding: 20px;
   transition: opacity 0.6s ease;
 }
 
