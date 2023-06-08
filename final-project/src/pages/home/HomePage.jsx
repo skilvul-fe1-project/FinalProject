@@ -168,9 +168,7 @@ function Home() {
                                 <div className="artikel-description">
                                     <p>{artikel.date}</p>
                                     <h1>{artikel.title}</h1>
-                                    <Link to="/Artikel/Detail">
-                                    Read More
-                                    </Link>
+                                    <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
                                 </div>
                             </div>
                         </div>

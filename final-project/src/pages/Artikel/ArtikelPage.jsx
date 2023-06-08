@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 function ArtikelPage() {
@@ -32,15 +32,18 @@ function ArtikelPage() {
         </div>
       </div>
       <div className={ArtikelCSS["card-list"]} data-aos="fade-up" data-aos-duration="1000">
-        <div className={ArtikelCSS["image-overlay"]}>
-          <img
-            src="https://images.unsplash.com/photo-1617303331806-3d6b58e03241?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="gambar"
-          />
-          <div className={ArtikelCSS["text-overlay"]}>
-            <h2>Ancaman Lingkungan dari Sampah Tak Terkelola di Indonesia</h2>
+      <Link to={`/Artikel/Detail`}>
+          <div className={ArtikelCSS["image-overlay"]}>
+            <img
+              src="https://images.unsplash.com/photo-1617303331806-3d6b58e03241?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="gambar"
+            />
+            <div className={ArtikelCSS["text-overlay"]}>
+              <h2>Ancaman Lingkungan dari Sampah Tak Terkelola di Indonesia</h2>
+            </div>
           </div>
-        </div>
+        </Link>
+
         <div className={ArtikelCSS["image-overlay"]}>
           <img
             src="https://images.unsplash.com/photo-1576037728058-ab2c538ac8d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80"
