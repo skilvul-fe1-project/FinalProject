@@ -3,7 +3,8 @@ import avatar from "../../assets/pria.png"
 import "./KontakPage.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 AOS.init();
 
 function KontakPage() {
@@ -48,6 +49,7 @@ function KontakPage() {
 
   return (
     <>
+    <Header/>
       <div className="banner">
         <div className="description" data-aos="fade-up"  data-aos-duration="1500">
           <h1>GET IN TOUCH</h1>
@@ -110,6 +112,7 @@ function KontakPage() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }

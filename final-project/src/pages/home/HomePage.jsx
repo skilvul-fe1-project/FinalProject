@@ -24,6 +24,10 @@ import logo5 from "../../assets/logo/logo5.png"
 import logo6 from "../../assets/logo/logo6.png"
 
 import axios from "axios";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+
 
 AOS.init();
 
@@ -71,7 +75,7 @@ function Home() {
 
     return (
         <>
-
+        <Header/>
             <section className="hero" >
                 <div className="hero-fr" data-aos="fade-right" data-aos-duration="2500">
                     <div className="hero-media" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="50">
@@ -141,12 +145,12 @@ function Home() {
             <section className="about-container" >
                 <img src={aboutIMG} alt="" data-aos="fade-right" />
                 <div className="about-description">
-                    <div className="about-sub" data-aos="fade-left" data-aos-delay="700">
+                    <div className="about-sub" data-aos="fade-up" data-aos-delay="700">
                         <h1>Our Story</h1>
                         <span className="border-white" ></span>
                     </div>
                     <br />
-                    <p data-aos="fade-left" data-aos-delay="1000">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
+                    <p data-aos="fade-up" data-aos-delay="700">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
                         sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
                         fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
                         yang tidak terkelola dengan baik.
@@ -184,7 +188,7 @@ function Home() {
 
                 </div>
             </section>
-
+            <Footer/>
         </>
     )
 }

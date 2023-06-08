@@ -1,5 +1,7 @@
 import AOS from 'aos';
 import './style.css'
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
@@ -8,6 +10,7 @@ AOS.init();
 function DonasiPage() {
     return (
         <>
+        <Header/>
             <div class="donasi" >
                 <h1 data-aos="fade-right">Mari Berdonasi</h1>
                 <p data-aos="fade-right">Mari berpartisipasi membantu kegiatan<p></p> relawan lingkungan untuk menyejahterakan<p></p>lingkungan</p>
@@ -20,7 +23,7 @@ function DonasiPage() {
             </div>
 
 
-            <div className="container-card" data-aos="fade-up">
+            <div className="container-card-list" data-aos="fade-up">
                 <a href="https://saweria.co/gorecycle" target="_blank"><div class="programs-card">
                     <div class="card">
                         <img src="https://i.ibb.co/FHNnDgx/Rectangle-130.png"></img>
@@ -56,7 +59,7 @@ function DonasiPage() {
                 <p>untuk informasi mengenai  donasi lebih spesifik hubungi kami
                     <p>di <a href="mailto:gorecycle01@gmail.com">gorecycle01@gmail.com</a></p></p>
             </div>
-
+            <Footer/>
         </>
     )
 }

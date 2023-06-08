@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../assets/logo.png';
 import './Style.css';
-
+import { Link } from "react-router-dom";
 function Header() {
     const [hamburger, openHamburger] = useState(false);
     const [sticky, stickyActive] = useState(false);
@@ -37,10 +37,10 @@ function Header() {
                 </div>
                 <nav className={`navbar ${hamburger ? 'active' : ''}`}>
                     <ul>
-                        <li><a href="/" className="pin" onClick={close}>Home</a></li>
-                        <li><a href="/" className="pin" onClick={close}>Artikel</a></li>
-                        <li><a href="/" className="pin" onClick={close}>Donasi</a></li>
-                        <li><a href="/" className="pin" onClick={close}>Kontak</a></li>
+                        <li><Link to="/home" className="pin" onClick={close}>Home</Link></li>
+                        <li><Link to="/artikel" className="pin" onClick={close}>Artikel</Link></li>
+                        <li><Link to="/donasi" className="pin" onClick={close}>Donasi</Link></li>
+                        <li><Link to="/kontak" className="pin" onClick={close}>Kontak</Link></li>
                     </ul>
                 </nav>
                 <div className={`hamburger ${hamburger ? 'active' : ''}`} onClick={open}>

@@ -22,7 +22,7 @@
 
 /*  */
 
-.container-card {
+.container-card-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
