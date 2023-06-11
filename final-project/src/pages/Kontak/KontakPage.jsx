@@ -50,6 +50,8 @@ function KontakPage() {
   return (
     <>
     <Header/>
+    <title>Go Recycle - Kontak </title>
+
       <div className="banner">
         <div className="description" data-aos="fade-up"  data-aos-duration="1500">
           <h1>GET IN TOUCH</h1>

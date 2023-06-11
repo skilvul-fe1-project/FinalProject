@@ -2,20 +2,42 @@ import DetailCSS from "./DetailPage.module.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import image from "../../assets/Rectangle1.png";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function DetailPage() {
+  const [artikelData, setArtikelData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel")
+      .then((response) => {
+        setArtikelData(response.data);
+        if (response.data.length > 0) {
+          document.title = "Artikel : " + response.data[0].title;
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching artikel data:", error);
+      });
+  }, []);
+
+
   return (
     <>
       <Header />
-      <div className={DetailCSS.hero}>
-        <img src={image} className={DetailCSS.img} />
-        <div className={DetailCSS["hero-container"]}>
-          <h1>
-            Inovasi Pengelolaan Sampah untuk <br />
-            Mengatasi Bencana Alam
-          </h1>
+      <title>Go Recycle : </title>
+      {artikelData.slice(0, 1).map((artikel) => (
+        <div className={DetailCSS.hero}>
+          <img src={image} className={DetailCSS.img} />
+
+          <div className={DetailCSS["hero-container"]} >
+            <h1 key={artikel}>
+              {artikel.title}
+            </h1>
+          </div>
         </div>
-      </div>
+
+      ))}
       <div className={DetailCSS.content}>
         <p className="date">2 Maret 2023</p>
         <section>

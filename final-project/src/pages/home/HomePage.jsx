@@ -76,6 +76,7 @@ function Home() {
     return (
         <>
             <Header />
+            <title>Go Recycle - Home</title>
             <section className="hero" >
                 <div className="hero-fr" data-aos="fade-right" data-aos-duration="2500">
                     <div className="hero-media" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="50">

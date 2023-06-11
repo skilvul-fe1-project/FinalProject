@@ -11,6 +11,7 @@ function ArtikelPage() {
   return (
     <>
       <Header />
+      <title>Go Recycle - Artikel</title>
       <div className={ArtikelCSS.hero}>
         <img src={image} className={ArtikelCSS.img} />
         <div className={ArtikelCSS["hero-container"]} data-aos="fade-right">

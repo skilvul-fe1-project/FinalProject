@@ -11,6 +11,8 @@ function DonasiPage() {
     return (
         <>
         <Header/>
+        
+        <title>Go Recycle - Donasi</title>
             <div class="donasi" >
                 <h1 data-aos="fade-right">Mari Berdonasi</h1>
                 <p data-aos="fade-right">Mari berpartisipasi membantu kegiatan<p></p> relawan lingkungan untuk menyejahterakan<p></p>lingkungan</p>
