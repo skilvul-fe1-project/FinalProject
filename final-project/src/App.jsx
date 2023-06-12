@@ -7,6 +7,8 @@ import KontakPage from "./pages/Kontak/KontakPage"
 
 
 function App() {
+
+  //tes push
   return (
     <>
     <Router>
