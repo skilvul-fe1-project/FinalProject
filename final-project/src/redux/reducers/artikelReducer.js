@@ -1,5 +1,7 @@
+import { START_FETCHING,SUCCESS_GET_ARTIKEL } from "../actions/artikelAction"
+
 const initialState = {
-    artikel:[],
+    artikels:[],
     isLoading: false
 }
 

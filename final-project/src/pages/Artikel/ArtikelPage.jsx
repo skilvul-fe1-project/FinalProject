@@ -7,7 +7,7 @@ import AOS from 'aos';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import 'aos/dist/aos.css';
-import { getArtikels } from "../../redux/actions/artikelAction";
+import { getData } from "../../redux/actions/artikelAction";
 AOS.init();
 
 function ArtikelPage() {
@@ -15,7 +15,7 @@ function ArtikelPage() {
   const { artikels, isLoading } = useSelector((state) => state.artikelReducer);
 
   useEffect(() => {
-    dispatch(getArtikels());
+    dispatch(getData());
   }, [dispatch]);
 
   return (
@@ -43,16 +43,20 @@ function ArtikelPage() {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          artikels.map((artikel) => (
-            <Link to={`/Artikel/Detail/${artikel.id}`} key={artikel.id}>
-              <div className={ArtikelCSS["image-overlay"]}>
-                <img src={artikel.img} alt="gambar" />
-                <div className={ArtikelCSS["text-overlay"]}>
-                  <h2>{artikel.title}</h2>
+          artikels.length > 0 ? (
+            artikels.slice(0,9).map((artikel) => (
+              <Link to={`/Artikel/Detail/${artikel.id}`} key={artikel.id}>
+                <div className={ArtikelCSS["image-overlay"]}>
+                  <img src={artikel.img} alt="gambar" />
+                  <div className={ArtikelCSS["text-overlay"]}>
+                    <h2>{artikel.title}</h2>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))
+              </Link>
+            ))
+          ) : (
+            <p>No articles found.</p>
+          )
         )}
       </div>
       <Footer />

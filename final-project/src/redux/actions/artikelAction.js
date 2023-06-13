@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const START_FETCHING = "START_FETCHING";
-export const SUCCESS_GET_DATA = "SUCCESS_GET_DATA";
+export const SUCCESS_GET_ARTIKEL = "SUCCESS_GET_ARTIKEL";
 export const ERROR_FETCHING = "ERROR_FETCHING";
 
 const startFetching = () => {
@@ -10,9 +10,9 @@ const startFetching = () => {
   };
 };
 
-const successGetData = (data) => {
+const successGetArtikel = (data) => {
   return {
-    type: SUCCESS_GET_DATA,
+    type: SUCCESS_GET_ARTIKEL,
     payload: data,
   };
 };
@@ -35,7 +35,7 @@ export const getData = () => {
       const response = await axios.get(url);
 
       // Kirim data ke reducer
-      dispatch(successGetData(response.data));
+      dispatch(successGetArtikel(response.data));
     } catch (error) {
       // Tangani kesalahan jika terjadi
       dispatch(errorFetching(error));
