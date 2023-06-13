@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .hero {
   background-color: grey;
   display: flex;
@@ -25,19 +29,16 @@
 }
 
 .content {
-  margin-top: 55px;
-  margin-right: 127px;
-  margin-left: 219px;
+ padding: 300px;
+ text-align: justify; 
 }
-
-.date {}
 
 .content img {
   margin-top: 7px;
 }
 
 .content-description {
-  margin-top: 42px;
+  width: 100%;
 }
 
 .card-blogs {
@@ -86,4 +87,18 @@
 
 .image-overlay:hover .text-overlay {
   opacity: 1;
+}
+
+
+@media (max-width: 1000px) {
+  .content {
+    padding: 100px;
+  }
+}
+
+
+@media (max-width: 396px) {
+  .content {
+    padding: 50px;
+  }
 }

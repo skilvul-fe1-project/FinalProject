@@ -4,18 +4,18 @@ import DetailPage from "./pages/Detail/DetailPage";
 import DonasiPage from './pages/Donasi/DonasiPage'
 import HomePage from "./pages/home/HomePage"
 import KontakPage from "./pages/Kontak/KontakPage"
+import "./App.css"
 
 
 function App() {
 
-  //tes push
   return (
     <>
     <Router>
       <Routes>
-      <Route path="/Home" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
         <Route path="/Artikel" element={<ArtikelPage />} />
-        <Route path="/Artikel/Detail" element={<DetailPage />} />
+        <Route path="/Artikel/Detail/:id" element={<DetailPage />} />
         <Route path="/Donasi" element={<DonasiPage />} />
         <Route path="/Kontak" element={<KontakPage />} />
       </Routes>

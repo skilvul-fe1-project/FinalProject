@@ -37,7 +37,7 @@ function Header() {
                 </div>
                 <nav className={`navbar ${hamburger ? 'active' : ''}`}>
                     <ul>
-                        <li><Link to="/Home" className="pin" onClick={close}>Home</Link></li>
+                        <li><Link to="/" className="pin" onClick={close}>Home</Link></li>
                         <li><Link to="/Artikel" className="pin" onClick={close}>Artikel</Link></li>
                         <li><Link to="/Donasi" className="pin" onClick={close}>Donasi</Link></li>
                         <li><Link to="/Kontak" className="pin" onClick={close}>Kontak</Link></li>
