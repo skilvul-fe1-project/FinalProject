@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import 'aos/dist/aos.css';
 import { getData } from "../../redux/actions/artikelAction";
+
+
 AOS.init();
 
 function ArtikelPage() {
@@ -27,7 +29,7 @@ function ArtikelPage() {
         <div className={ArtikelCSS["hero-container"]} data-aos="fade-right">
           <h1>
             Inovasi Pengelolaan Sampah untuk <br />
-            Mengatasi Bencana Alam
+            Mengatasi Bencana Alam <br />
           </h1>
           <p>
             Inovasi seputar pengelolaan sampah untuk mencegah bencana alam

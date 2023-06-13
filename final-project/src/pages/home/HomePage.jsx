@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom'; 
+import "../home/style.css";
+
 import { BsPlayFill } from "react-icons/bs";
 import { AiFillYoutube, AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import Hero from "../../assets/Hero.png";
-import "../home/style.css";
+
+
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
+
 import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import aboutIMG from "../../assets/trash.png"
-import artikelIMG from "../../assets/artikel/artikel-1.png"
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -22,13 +25,14 @@ import logo3 from "../../assets/logo/logo3.png"
 import logo4 from "../../assets/logo/logo4.png"
 import logo5 from "../../assets/logo/logo5.png"
 import logo6 from "../../assets/logo/logo6.png"
-
-import axios from "axios";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { getData } from "../../redux/actions/artikelAction";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 AOS.init();
 
 
@@ -59,19 +63,14 @@ function Home() {
             }
         ]
     };
-
     const [isOpen, setIsOpen] = useState(false);
-    const [artikelData, setArtikelData] = useState([]);
+
+    const dispatch = useDispatch();
+    const { artikels, isLoading } = useSelector((state) => state.artikelReducer);
     useEffect(() => {
-        axios
-            .get("https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel")
-            .then((response) => {
-                setArtikelData(response.data);
-            })
-            .catch((error) => {
-                console.error("Error fetching artikel data:", error);
-            });
-    }, []);
+        dispatch(getData());
+    }, [dispatch]);
+
 
     return (
         <>
@@ -160,22 +159,32 @@ function Home() {
                         mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
                 </div>
             </section>
+
             <section className="artikel-container">
                 <Slider {...settings}>
-                    {artikelData.slice(0, 3).map((artikel) => (
-                        <div className="container-slide" key={artikel.id}>
-                            <div className="artikel-slide">
-                                <img src={artikel.img} alt="haha" />
-                                <div className="artikel-description">
-                                    <p>{artikel.date}</p>
-                                    <h1>{artikel.title}</h1>
-                                    <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : (
+                        artikels.length > 0 ? (
+                            artikels.slice(0, 3).map((artikel) => (
+                                <div className="container-slide" key={artikel.id}>
+                                    <div className="artikel-slide">
+                                        <img src={artikel.img} alt="haha" />
+                                        <div className="artikel-description">
+                                            <p>{artikel.date}</p>
+                                            <h1>{artikel.title}</h1>
+                                            <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            ))
+                        ) : (
+                            <p>No articles found.</p>
+                        )
+                    )}
                 </Slider>
             </section>
+
             <section className="support-container" data-aos="fade-up" data-aos-delay="300">
                 <h1>POWERED BY</h1>
                 <div className="img-container">
