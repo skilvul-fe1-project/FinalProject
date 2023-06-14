@@ -6,7 +6,6 @@ import HomePage from "./pages/home/HomePage"
 import KontakPage from "./pages/Kontak/KontakPage"
 import "./App.css"
 
-
 function App() {
 
   return (

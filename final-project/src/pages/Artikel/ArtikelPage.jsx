@@ -8,11 +8,17 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import 'aos/dist/aos.css';
 import { getData } from "../../redux/actions/artikelAction";
-
+import { useLocation } from 'react-router-dom';
 
 AOS.init();
 
 function ArtikelPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const dispatch = useDispatch();
   const { artikels, isLoading } = useSelector((state) => state.artikelReducer);
 
@@ -28,12 +34,8 @@ function ArtikelPage() {
         <img src={image} className={ArtikelCSS.img} alt="Hero Image" />
         <div className={ArtikelCSS["hero-container"]} data-aos="fade-right">
           <h1>
-            Inovasi Pengelolaan Sampah untuk <br />
-            Mengatasi Bencana Alam <br />
+          {artikels[0]?.title}
           </h1>
-          <p>
-            Inovasi seputar pengelolaan sampah untuk mencegah bencana alam
-          </p>
           <button className={ArtikelCSS.btn}>
             <Link to={`/Artikel/Detail/${artikels[0]?.id}`}>
               Read More
@@ -46,7 +48,7 @@ function ArtikelPage() {
           <p>Loading...</p>
         ) : (
           artikels.length > 0 ? (
-            artikels.slice(0,9).map((artikel) => (
+            artikels.slice(1,10).map((artikel) => (
               <Link to={`/Artikel/Detail/${artikel.id}`} key={artikel.id}>
                 <div className={ArtikelCSS["image-overlay"]}>
                   <img src={artikel.img} alt="gambar" />

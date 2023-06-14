@@ -48,10 +48,10 @@
 .programs-card {
   width: 300px;
   background-color: whitesmoke;
-  box-shadow: 0 0 10px rgb(67, 64, 64);
-  border: 2px solid #22B18B;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #22B18B;
   transition: transform 0.2s ease-in-out;
-  border-radius: 10px;
+  border-radius: 30px;
   display: inline-block;
 
   /* Menampilkan elemen secara berjajar kesamping */
@@ -60,6 +60,7 @@
 }
 
 .programs-card:hover {
+  transform: scaleX(10px);
   background-color: #478552;
   /* transform: scale(1.1); */
 

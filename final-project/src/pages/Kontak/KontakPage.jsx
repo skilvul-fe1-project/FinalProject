@@ -5,9 +5,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { useLocation } from 'react-router-dom';
 AOS.init();
 
 function KontakPage() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [location]);
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");

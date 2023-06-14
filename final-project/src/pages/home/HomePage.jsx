@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import "../home/style.css";
 
 import { BsPlayFill } from "react-icons/bs";
@@ -31,12 +31,20 @@ import Footer from "../../components/Footer";
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from "../../redux/actions/artikelAction";
 
+import { useLocation } from 'react-router-dom';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
 
 function Home() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -151,12 +159,7 @@ function Home() {
                     </div>
                     <br />
                     <p data-aos="fade-up" data-aos-delay="700">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
-                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
-                        fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
-                        yang tidak terkelola dengan baik.
-                        Selain itu, Gorecycle juga memiliki fitur donasi yang bertujuan untuk mendukung kegiatan lingkungan yang
-                        berkaitan dengan daur ulang sampah.<br /><br />  Donasi yang terkumpul melalui website ini akan digunakan untuk
-                        mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
+                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Permasalahan lingkungan semakin meningkat seiring berjalannya waktu, seperti volume limbah yang meningkat, pencemaran lingkungan, polusi udara, dan efek rumah kaca. Hal ini mengakibatkan bencana alam, perubahan iklim, dan kekhawatiran akan masa depan planet kita. Dalam menghadapi tantangan ini, penyebaran informasi yang akurat dan dapat diandalkan mengenai isu-isu lingkungan sangat penting.  <br /><br />  Proyek GoRecycle hadir untuk memberikan kontribusi dalam menjaga dan melestarikan lingkungan melalui penyebaran informasi yang relevan dan inspiratif kepada masyarakat, agar mereka dapat menyadari dampak tindakan mereka terhadap lingkungan dan mengetahui solusi yang dapat diterapkan.</p>
                 </div>
             </section>
 
