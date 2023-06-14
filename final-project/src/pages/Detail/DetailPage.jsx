@@ -5,7 +5,6 @@ import image from "../../assets/Rectangle1.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
-import { getData } from "../../redux/actions/artikelAction";
 import { useParams } from 'react-router-dom';
 
 
