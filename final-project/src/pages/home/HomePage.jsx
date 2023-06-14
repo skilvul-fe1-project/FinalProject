@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+import "../home/style.css";
+
 import { BsPlayFill } from "react-icons/bs";
 import { AiFillYoutube, AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import Hero from "../../assets/Hero.png";
-import "../home/style.css";
+
+
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
+
 import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import aboutIMG from "../../assets/trash.png"
-import artikelIMG from "../../assets/artikel/artikel-1.png"
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -22,17 +25,26 @@ import logo3 from "../../assets/logo/logo3.png"
 import logo4 from "../../assets/logo/logo4.png"
 import logo5 from "../../assets/logo/logo5.png"
 import logo6 from "../../assets/logo/logo6.png"
-
-import axios from "axios";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { getData } from "../../redux/actions/artikelAction";
 
+import { useLocation } from 'react-router-dom';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 AOS.init();
 
 
 function Home() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -59,19 +71,14 @@ function Home() {
             }
         ]
     };
-
     const [isOpen, setIsOpen] = useState(false);
-    const [artikelData, setArtikelData] = useState([]);
+
+    const dispatch = useDispatch();
+    const { artikels, isLoading } = useSelector((state) => state.artikelReducer);
     useEffect(() => {
-        axios
-            .get("https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel")
-            .then((response) => {
-                setArtikelData(response.data);
-            })
-            .catch((error) => {
-                console.error("Error fetching artikel data:", error);
-            });
-    }, []);
+        dispatch(getData());
+    }, [dispatch]);
+
 
     return (
         <>
@@ -152,30 +159,35 @@ function Home() {
                     </div>
                     <br />
                     <p data-aos="fade-up" data-aos-delay="700">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
-                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
-                        fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
-                        yang tidak terkelola dengan baik.
-                        Selain itu, Gorecycle juga memiliki fitur donasi yang bertujuan untuk mendukung kegiatan lingkungan yang
-                        berkaitan dengan daur ulang sampah.<br /><br />  Donasi yang terkumpul melalui website ini akan digunakan untuk
-                        mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
+                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Permasalahan lingkungan semakin meningkat seiring berjalannya waktu, seperti volume limbah yang meningkat, pencemaran lingkungan, polusi udara, dan efek rumah kaca. Hal ini mengakibatkan bencana alam, perubahan iklim, dan kekhawatiran akan masa depan planet kita. Dalam menghadapi tantangan ini, penyebaran informasi yang akurat dan dapat diandalkan mengenai isu-isu lingkungan sangat penting.  <br /><br />  Proyek GoRecycle hadir untuk memberikan kontribusi dalam menjaga dan melestarikan lingkungan melalui penyebaran informasi yang relevan dan inspiratif kepada masyarakat, agar mereka dapat menyadari dampak tindakan mereka terhadap lingkungan dan mengetahui solusi yang dapat diterapkan.</p>
                 </div>
             </section>
+
             <section className="artikel-container">
                 <Slider {...settings}>
-                    {artikelData.slice(0, 3).map((artikel) => (
-                        <div className="container-slide" key={artikel.id}>
-                            <div className="artikel-slide">
-                                <img src={artikel.img} alt="haha" />
-                                <div className="artikel-description">
-                                    <p>{artikel.date}</p>
-                                    <h1>{artikel.title}</h1>
-                                    <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : (
+                        artikels.length > 0 ? (
+                            artikels.slice(0, 3).map((artikel) => (
+                                <div className="container-slide" key={artikel.id}>
+                                    <div className="artikel-slide">
+                                        <img src={artikel.img} alt="haha" />
+                                        <div className="artikel-description">
+                                            <p>{artikel.date}</p>
+                                            <h1>{artikel.title}</h1>
+                                            <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            ))
+                        ) : (
+                            <p>No articles found.</p>
+                        )
+                    )}
                 </Slider>
             </section>
+
             <section className="support-container" data-aos="fade-up" data-aos-delay="300">
                 <h1>POWERED BY</h1>
                 <div className="img-container">
