@@ -1,7 +1,7 @@
 import DetailCSS from "./DetailPage.module.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import image from "../../assets/Rectangle1.png";
+import ReactMarkdown from 'react-markdown'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,9 @@ function DetailPage() {
       <div className={DetailCSS.content}>
         <p className="date">{artikel.date}</p>
         <br />
-        <p className={DetailCSS['content-description']}>{artikel.description}</p>
+        <p className={DetailCSS['content-description']}>
+          <ReactMarkdown>{artikel.description}</ReactMarkdown>
+          </p>
         <div className={DetailCSS['related-title']}>
           <h1>RELATED BLOG</h1>
         </div>
