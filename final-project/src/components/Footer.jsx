@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillYoutube,AiFillInstagram,AiFillTwitterCircle} from "react-icons/ai";
-import "./Style.css"
+import "./style.css"
 import Logo from '../assets/logo.png';
 function Footer(){
     return(

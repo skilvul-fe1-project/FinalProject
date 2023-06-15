@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../assets/logo.png';
-import './Style.css';
+import './style.css';
 import { Link } from "react-router-dom";
 function Header() {
     const [hamburger, openHamburger] = useState(false);
