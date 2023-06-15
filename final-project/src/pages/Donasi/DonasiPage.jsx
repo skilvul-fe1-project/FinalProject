@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import './style.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css';
 // ..
 import { useLocation } from 'react-router-dom';
 AOS.init();
@@ -22,7 +22,7 @@ function DonasiPage() {
             <title>Go Recycle - Donasi</title>
             <div className="donasi" >
                 <h1 data-aos="fade-right">Mari Berdonasi</h1>
-                <p data-aos="fade-right">Mari berpartisipasi membantu kegiatan<br />  relawan lingkungan untuk menyejahterakan <br /> lingkungan</p>
+                <p data-aos="fade-right">Mari Berpartisipasi Membantu kegiatan<br />  Relawan Lingkungan untuk Menyejahterakan <br /> Lingkungan</p>
             </div>
 
 

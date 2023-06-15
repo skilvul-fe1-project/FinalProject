@@ -133,4 +133,14 @@
   .text-overlay h2 {
     display: none;
   }
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
 }

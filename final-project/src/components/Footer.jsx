@@ -9,10 +9,10 @@ function Footer(){
             <div className="container-top">
                 <img src={Logo} alt="" />
                 <div className="nav-footer">
-                        <a href="">Home</a>
-                        <a href="">Artikel</a>
-                        <a href="">Donasi</a>
-                        <a href="">Kontak</a>
+                        <a href="">Company</a>
+                        <a href="">Accessibility</a>
+                        <a href="">Sustainability</a>
+                        <a href="">NewsLetter</a>
                 </div>
                 <div className="media">
                     <AiFillYoutube className="icon"/>
@@ -21,7 +21,7 @@ function Footer(){
                 </div>
             </div>
             <div className="container-bottom">
-            <p>Copyrights © 2023 GoRecycle. All rights reservedd</p>
+            <p>Copyrights © 2023 GoRecycle. All rights reserved</p>
             </div>
 
         </footer>

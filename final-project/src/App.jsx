@@ -4,7 +4,6 @@ import DetailPage from "./pages/Detail/DetailPage";
 import DonasiPage from './pages/Donasi/DonasiPage'
 import HomePage from "./pages/home/HomePage"
 import KontakPage from "./pages/Kontak/KontakPage"
-import "./App.css"
 
 function App() {
 

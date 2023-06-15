@@ -27,17 +27,14 @@ const errorFetching = (error) => {
 export const getData = () => {
   return async (dispatch) => {
     try {
-      // Mulai loading
       dispatch(startFetching());
 
-      // Panggil API
       const url = "https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel";
       const response = await axios.get(url);
 
-      // Kirim data ke reducer
       dispatch(successGetArtikel(response.data));
     } catch (error) {
-      // Tangani kesalahan jika terjadi
+
       dispatch(errorFetching(error));
     }
   };

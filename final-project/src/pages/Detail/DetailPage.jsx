@@ -44,6 +44,9 @@ function DetailPage() {
     return
   }
 
+  const paragraf = artikel.description.split("\n")
+  console.log(paragraf)
+
   return (
     <>
       <Header />
