@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+import "../home/style.css";
+
 import { BsPlayFill } from "react-icons/bs";
 import { AiFillYoutube, AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import Hero from "../../assets/Hero.png";
-import "../home/style.css";
+
+
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
+
 import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import aboutIMG from "../../assets/trash.png"
-import artikelIMG from "../../assets/artikel/artikel-1.png"
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -22,20 +25,33 @@ import logo3 from "../../assets/logo/logo3.png"
 import logo4 from "../../assets/logo/logo4.png"
 import logo5 from "../../assets/logo/logo5.png"
 import logo6 from "../../assets/logo/logo6.png"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux';
+import { getData } from "../../redux/actions/artikelAction";
 
+import { useLocation } from 'react-router-dom';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 AOS.init();
 
 
 function Home() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
@@ -55,23 +71,19 @@ function Home() {
             }
         ]
     };
-
     const [isOpen, setIsOpen] = useState(false);
-    const [artikelData, setArtikelData] = useState([]);
+
+    const dispatch = useDispatch();
+    const { artikels, isLoading } = useSelector((state) => state.artikelReducer);
     useEffect(() => {
-        axios
-            .get("https://644e67144e86e9a4d8f7c68e.mockapi.io/artikel")
-            .then((response) => {
-                setArtikelData(response.data);
-            })
-            .catch((error) => {
-                console.error("Error fetching artikel data:", error);
-            });
-    }, []);
+        dispatch(getData());
+    }, [dispatch]);
+
 
     return (
         <>
-
+            <Header />
+            <title>Go Recycle - Home</title>
             <section className="hero" >
                 <div className="hero-fr" data-aos="fade-right" data-aos-duration="2500">
                     <div className="hero-media" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="50">
@@ -84,7 +96,7 @@ function Home() {
                         <h1>Save Environment  save our Planet Earth.</h1>
                         <p>The natural environment is important to human health, it was foremost. Nature is very importance</p>
                         <div className="hero-link" >
-                            <a href="" className="action">Take Action</a>
+                            <a href="https://saweria.co/gorecycle" target={"_blank"} className="action">Take Action</a>
                             <a href="#" className="watch" onClick={() => setIsOpen(true)}>
                                 <BsPlayFill className="hero-icon" /> Watch</a>
                         </div>
@@ -99,14 +111,14 @@ function Home() {
             <section className="benefit-container">
                 <div className="sub-judul-card" data-aos="fade-down" data-aos-delay="300">
                     <span className="border"></span>
-                    <h1>Why people choose go recycle ?</h1>
+                    <h1>Why People Choose Go Recycle ?</h1>
                     <span className="border"></span>
                 </div>
                 <div className="list-card" data-aos="fade-up" data-aos-delay="400" >
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="500" data-aos="fade-up">
-                                <img src={icon1} alt="" className="animated-1"/>
+                                <img src={icon1} alt="" className="animated-1" />
                                 <h1  >Great Information</h1>
                             </div>
                             <div className="back">
@@ -128,7 +140,7 @@ function Home() {
                     <div className="container-card">
                         <div className="card">
                             <div className="front" data-aos-delay="700" data-aos="fade-up">
-                                <img src={icon3} alt="" className="animated-3"/>
+                                <img src={icon3} alt="" className="animated-3" />
                                 <h1>Caring</h1>
                             </div>
                             <div className="back">
@@ -141,36 +153,41 @@ function Home() {
             <section className="about-container" >
                 <img src={aboutIMG} alt="" data-aos="fade-right" />
                 <div className="about-description">
-                    <div className="about-sub" data-aos="fade-left" data-aos-delay="700">
+                    <div className="about-sub" data-aos="fade-up" data-aos-delay="700">
                         <h1>Our Story</h1>
                         <span className="border-white" ></span>
                     </div>
                     <br />
-                    <p data-aos="fade-left" data-aos-delay="1000">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
-                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Gorecycle juga memiliki
-                        fitur blog. Fitur Blog ini berisi artikel tentang isu lingkungan dan dampak yang ditimbulkan oleh limbah
-                        yang tidak terkelola dengan baik.
-                        Selain itu, Gorecycle juga memiliki fitur donasi yang bertujuan untuk mendukung kegiatan lingkungan yang
-                        berkaitan dengan daur ulang sampah.<br /><br />  Donasi yang terkumpul melalui website ini akan digunakan untuk
-                        mendukung organisasi dan lembaga yang bekerja dalam bidang lingkungan dan daur ulang sampah.</p>
+                    <p data-aos="fade-up" data-aos-delay="700">Gorecycle adalah sebuah website yang bertujuan untuk mempromosikan gerakan recycle atau daur ulang
+                        sampah dalam upaya menjaga lingkungan hidup yang lebih bersih dan sehat. <br /><br /> Permasalahan lingkungan semakin meningkat seiring berjalannya waktu, seperti volume limbah yang meningkat, pencemaran lingkungan, polusi udara, dan efek rumah kaca. Hal ini mengakibatkan bencana alam, perubahan iklim, dan kekhawatiran akan masa depan planet kita. Dalam menghadapi tantangan ini, penyebaran informasi yang akurat dan dapat diandalkan mengenai isu-isu lingkungan sangat penting.  <br /><br />  Proyek GoRecycle hadir untuk memberikan kontribusi dalam menjaga dan melestarikan lingkungan melalui penyebaran informasi yang relevan dan inspiratif kepada masyarakat, agar mereka dapat menyadari dampak tindakan mereka terhadap lingkungan dan mengetahui solusi yang dapat diterapkan.</p>
                 </div>
             </section>
+
             <section className="artikel-container">
                 <Slider {...settings}>
-                {artikelData.slice(0, 3).map((artikel) => (
-                        <div className="container-slide" key={artikel.id}>
-                            <div className="artikel-slide">
-                                <img src={artikel.img} alt="haha" />
-                                <div className="artikel-description">
-                                    <p>{artikel.date}</p>
-                                    <h1>{artikel.title}</h1>
-                                    <a href="#">Read More</a>
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : (
+                        artikels.length > 0 ? (
+                            artikels.slice(0, 3).map((artikel) => (
+                                <div className="container-slide" key={artikel.id}>
+                                    <div className="artikel-slide">
+                                        <img src={artikel.img} alt="haha" />
+                                        <div className="artikel-description">
+                                            <p>{artikel.date}</p>
+                                            <h1>{artikel.title}</h1>
+                                            <Link to={`/Artikel/Detail/${artikel.id}`}>Read More</Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            ))
+                        ) : (
+                            <p>No articles found.</p>
+                        )
+                    )}
                 </Slider>
             </section>
+
             <section className="support-container" data-aos="fade-up" data-aos-delay="300">
                 <h1>POWERED BY</h1>
                 <div className="img-container">
@@ -184,7 +201,7 @@ function Home() {
 
                 </div>
             </section>
-
+            <Footer />
         </>
     )
 }

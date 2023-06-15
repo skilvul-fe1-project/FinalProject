@@ -22,20 +22,22 @@
 
 /*  */
 
-.container-card {
+.container-card-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 5vw;
+  padding: 30px;
   gap: 5vw;
+
   transition: all 0.3s;
 }
 
 .deskripsi {
   color: black;
   text-align: center;
-  padding: 8vw;
+  padding: 70px;
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -46,21 +48,24 @@
 .programs-card {
   width: 300px;
   background-color: whitesmoke;
-  box-shadow: 0 0 10px rgb(67, 64, 64);
-  border: 2px solid #22B18B;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #22B18B;
   transition: transform 0.2s ease-in-out;
-  border-radius: 10px;
+  border-radius: 30px;
   display: inline-block;
+
   /* Menampilkan elemen secara berjajar kesamping */
-  transition: all 0.2s;
+  transition: all 0.3s;
 
 }
 
 .programs-card:hover {
+  transform: scaleX(10px);
   background-color: #478552;
   /* transform: scale(1.1); */
-  box-shadow: 2 5 10px gray;
+
   color: white;
+  transform: translateY(-10px);
 }
 
 a .programs-card {
@@ -97,6 +102,16 @@ a .programs-card {
 
 }
 
+.card-donate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  height: 400px;
+  gap: 10px;
+}
+
 .programs-card .card a {
   display: inline-block;
   margin-top: 10px;
@@ -115,8 +130,8 @@ a .programs-card {
 
 .main {
   text-align: center;
-  margin-top: 20px;
-  padding: 20px;
+
+  padding: 50px;
 }
 
 

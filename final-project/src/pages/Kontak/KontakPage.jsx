@@ -3,10 +3,19 @@ import avatar from "../../assets/pria.png"
 import "./KontakPage.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import { useLocation } from 'react-router-dom';
 AOS.init();
 
 function KontakPage() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [location]);
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
@@ -48,11 +57,14 @@ function KontakPage() {
 
   return (
     <>
+    <Header/>
+    <title>Go Recycle - Kontak </title>
+
       <div className="banner">
         <div className="description" data-aos="fade-up"  data-aos-duration="1500">
           <h1>GET IN TOUCH</h1>
           <span className="banner-border"></span>
-          <p>Kritikan dan masukan anda sangat membantu kami</p>
+          <p>Kritikan & Masukan Anda Sangat Membantu Kami</p>
         </div>
       </div>
       <section className="contact" data-aos="fade-right">
@@ -61,9 +73,9 @@ function KontakPage() {
         <div className="form-contact" data-aos="fade-left">
           <h1 data-aos="fade-left">Hubungi Kami</h1>
           <form onSubmit={handleSubmit} data-aos="fade-left">
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" />
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-            <textarea name="" id="" cols="30" rows="10" placeholder="Komentar" value={comment} onChange={(e) => setComment(e.target.value)} > </textarea>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" required/>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Komentar" value={comment} onChange={(e) => setComment(e.target.value)} required > </textarea>
             <div className="button-container">
               <button>SEND</button>
             </div>
@@ -110,6 +122,7 @@ function KontakPage() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }
