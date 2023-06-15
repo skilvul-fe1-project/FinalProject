@@ -1,0 +1,19 @@
+.hero {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.hero-container {
+  background-color: red;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  height: 600px;
+}
+
+#button-read {
+}
